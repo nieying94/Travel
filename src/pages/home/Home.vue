@@ -1,15 +1,21 @@
 <!-- template定义了组件的模板 -->
 <template>
-    <home-header> </home-header>
+    <div>
+      <home-header> </home-header>
+      <home-swiper> </home-swiper>
+      <p>test</p>
+    </div>
 </template>
 
 <script>
 import HomeHeader from './components/Header'
+import HomeSwiper from './components/Swiper'
 // 导出一个对象，里面定义一个组件的名字
 export default{
   name: 'Home',
   components: {
-    HomeHeader
+    HomeHeader,
+    HomeSwiper
   }
 }
 </script>
