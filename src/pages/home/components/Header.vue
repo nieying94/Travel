@@ -9,7 +9,7 @@
             输入城市/景点/游玩主题</div>
         <router-link to='/city'>
             <div class="header-right">
-                {{this.city}}
+                {{this.doubleCity}}
                 <span class="iconfont arrow-icon">&#xe6aa;</span>
             </div>
         </router-link>
@@ -18,10 +18,12 @@
 
 <script>
 // 导出一个对象，里面定义一个组件的名字
+import { mapState, mapGetters } from 'Vuex'
 export default{
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
   }
 }
 </script>
@@ -41,7 +43,8 @@ export default{
                 text-align: center
                 font-size: .4rem
         .header-right
-            width: 1.24rem
+            min-width: 1.04rem
+            padding:0 .1rem
             float: right
             text-align: center
             color: #fff
