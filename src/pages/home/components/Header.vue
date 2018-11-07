@@ -18,7 +18,7 @@
 
 <script>
 // 导出一个对象，里面定义一个组件的名字
-import { mapState, mapGetters } from 'Vuex'
+import { mapState, mapGetters } from 'vuex'
 export default{
   name: 'HomeHeader',
   computed: {
