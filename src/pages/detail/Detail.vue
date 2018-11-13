@@ -14,11 +14,6 @@ import DetailHeader from './components/Header'
 import DetailList from './components/List'
 export default {
   name: 'Detail',
-  components: {
-    DetailBanner,
-    DetailHeader,
-    DetailList
-  },
   data () {
     return {
       list: [{
@@ -26,7 +21,7 @@ export default {
         children: [{
           title: '成人三馆联票',
           children: [{
-            title: '成人三馆联票-某 一 连锁店销售'
+            title: '成人三馆联票 - 某一连锁店销售'
           }]
         }, {
           title: '成人五馆联票'
@@ -39,6 +34,11 @@ export default {
         title: '特惠票'
       }]
     }
+  },
+  components: {
+    DetailBanner,
+    DetailHeader,
+    DetailList
   }
 }
 </script>
