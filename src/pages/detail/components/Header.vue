@@ -70,23 +70,23 @@ export default {
       color: #ffffff
       font-size: .4rem
   .header-fixed
-      position: fixed
+    z-index: 2
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: $headerHeight
+    line-height: $headerHeight
+    text-align: center
+    background: $bgColor
+    color:#fff
+    font-size: .32rem
+    .header-fixed-back
+      position: absolute
+      width: .64rem
+      text-align: center
+      font-size: .4rem
       top: 0
       left: 0
-      right: 0
-      height: $headerHeight
-      line-height: $headerHeight
-      text-align: center
-      background: $bgColor
-      color:#fff
-      font-size: .32rem
-      .header-fixed-back
-        position: absolute
-        width: .64rem
-        text-align: center
-        font-size: .4rem
-        top: 0
-        left: 0
-        color: #fff
-
+      color: #fff
 </style>
