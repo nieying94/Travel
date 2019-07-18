@@ -1,9 +1,13 @@
 'use strict'
+// 引入nodejs路径模块
 const path = require('path')
+// 引入utils工具模块，具体查看我的博客关于utils的解释，utils主要用来处理css-loader和vue-style-loader的
 const utils = require('./utils')
+// 引入config目录下的index.js配置文件，主要用来定义一些开发和生产环境的属性
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+// 此函数是用来返回当前目录的平行目录的路径，因为有个'..'
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -21,6 +25,7 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
+  // 入口文件是src目录下的main.js
   entry: {
     app: './src/main.js'
   },
@@ -32,9 +37,12 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
+    // 省略扩展名，也就是说.js,.vue,.json文件导入可以省略后缀名，这会覆盖默认的配置，所以要省略扩展名在这里一定要写上
     extensions: ['.js', '.vue', '.json'],
     alias: {
+      //后面的$符号指精确匹配，也就是说只能使用 import vuejs from "vue" 这样的方式导入vue.esm.js文件，不能在后面跟上 vue/vue.js
       'vue$': 'vue/dist/vue.esm.js',
+      //resolve('src') 其实在这里就是项目根目录中的src目录,@为所取的别名
       '@': resolve('src'),
       'styles':resolve('src/assets/styles'),
       'common':resolve('src/common'),
