@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home.vue'
 import City from '@/pages/city/City.vue'
 import Detail from '@/pages/detail/Detail.vue'
+import Chart from '@/pages/chart/index.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +23,10 @@ export default new Router({
     path: '/detail/:id',
     name: 'Detail',
     component: Detail
+  }, {
+    path: '/chart',
+    name: 'Chart',
+    component: Chart
   }],
   scrollBehavior (to, from, savedPosition) {
     return {x: 0, y: 0}
